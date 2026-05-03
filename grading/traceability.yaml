@@ -1,0 +1,69 @@
+# BrowserAgent — Traceability Matrix
+# Maps each user story to: spec section, source modules, and test files
+
+traceability:
+
+  US-01:
+    title: "Submit a Question and Receive an Answer"
+    spec_section: "§4.1 Web UI, §3 Data Flow"
+    source_modules:
+      - src/browseragent/app.py
+      - src/browseragent/agent.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us01_submit_question_receive_answer
+    manual_steps: docs/STORIES.md#us-01
+
+  US-02:
+    title: "Live Streaming of Browsing Steps"
+    spec_section: "§4.1 Web UI (SSE), §3 Data Flow"
+    source_modules:
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us02_session_page_exists
+    manual_steps: docs/STORIES.md#us-02
+
+  US-03:
+    title: "JSON REST API"
+    spec_section: "§4.2 JSON REST API"
+    source_modules:
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us03_json_api_response_schema
+    manual_steps: docs/STORIES.md#us-03
+
+  US-04:
+    title: "Health Check Endpoint"
+    spec_section: "§4.1 Web UI"
+    source_modules:
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us04_health_check
+    manual_steps: docs/STORIES.md#us-04
+
+  US-05:
+    title: "Error — Empty Question"
+    spec_section: "§4.1 Web UI"
+    source_modules:
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us05_empty_question_no_crash
+    manual_steps: docs/STORIES.md#us-05
+
+  US-06:
+    title: "Error — Invalid API Request"
+    spec_section: "§4.2 JSON REST API"
+    source_modules:
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us06_api_missing_question_400
+    manual_steps: docs/STORIES.md#us-06
+
+  US-07:
+    title: "Request Tracing via Logs"
+    spec_section: "§4.2 JSON REST API, Logging"
+    source_modules:
+      - src/browseragent/logging_config.py
+      - src/browseragent/app.py
+    test_files:
+      - tests/user_stories/test_stories.py::test_us07_request_id_in_response
+    manual_steps: docs/STORIES.md#us-07

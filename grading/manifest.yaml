@@ -1,0 +1,46 @@
+# BrowserAgent — Reproducibility Manifest
+# TA: verify these values with `git log --oneline -1` and `python --version`
+
+project: BrowserAgent
+course: CS 6263 NLP and Agentic AI
+instructor: Dr. Peyman Najafirad
+submission_deadline: "2025-05-10T23:59:00-05:00"
+
+# ── Environment ───────────────────────────────────────────────────────────────
+python_version: "3.10.12"
+seed: 42
+commit_sha: "FILL_IN_BEFORE_SUBMISSION"   # run: git rev-parse HEAD
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+model_id: "claude-sonnet-4-20250514"
+model_provider: "Anthropic"
+model_temperature: 0.0
+model_max_tokens: 512
+
+# ── Dataset ───────────────────────────────────────────────────────────────────
+eval_dataset: "NaturalQuestions (multi-hop sample)"
+eval_dataset_version: "live Wikipedia 2025-05"
+eval_num_samples: 50
+
+# ── Headline metrics (± tolerance) ────────────────────────────────────────────
+metrics:
+  mean_token_f1:
+    expected: 0.52
+    tolerance: 0.05
+  exact_match:
+    expected: 0.28
+    tolerance: 0.05
+  accuracy_at_f1_0_5:
+    expected: 0.50
+    tolerance: 0.05
+
+# ── Pinned dependency hashes (key packages) ───────────────────────────────────
+# Run `pip-audit --format json | jq .[].name` to verify
+pinned_packages:
+  - { name: flask, version: "3.0.3" }
+  - { name: anthropic, version: "0.29.0" }
+  - { name: playwright, version: "1.44.0" }
+  - { name: pytest, version: "8.2.2" }
+  - { name: ruff, version: "0.4.9" }
+  - { name: black, version: "24.4.2" }
+  - { name: mypy, version: "1.10.0" }

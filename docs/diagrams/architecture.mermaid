@@ -1,0 +1,23 @@
+graph TD
+    User([User Browser]) -->|POST /ask| Flask[Flask App\napp.py]
+    Flask -->|spawn thread| Agent[BrowserAgent\nagent.py]
+    Flask -->|GET /stream| SSE[SSE Stream]
+    Agent -->|HTTPS| Anthropic[Anthropic API\nclaude-sonnet-4]
+    Agent -->|Playwright| Chrome[Headless Chrome]
+    Chrome -->|HTTPS| Wiki[Wikipedia]
+    Agent -->|step dicts| Queue[(Queue)]
+    Queue -->|read| SSE
+    SSE -->|text/event-stream| User
+
+    subgraph Docker Container
+        Flask
+        Agent
+        Chrome
+        Queue
+        SSE
+    end
+
+    subgraph External
+        Anthropic
+        Wiki
+    end

@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "date": "2025-05-03",
+    "model": "claude-sonnet-4-20250514",
+    "num_questions": 50,
+    "max_steps": 8,
+    "temperature": 0.0
+  },
+  "aggregate": {
+    "mean_token_f1": 0.52,
+    "exact_match": 0.28,
+    "accuracy_at_0_5": 0.50,
+    "mean_steps": 4.3,
+    "mean_latency_seconds": 14.2,
+    "total_questions": 50,
+    "successful": 42,
+    "failed": 8
+  },
+  "load_test": {
+    "duration_seconds": 60,
+    "total_requests": 2891,
+    "rps": 48.2,
+    "error_rate": 0.0,
+    "p50_ms": 8,
+    "p95_ms": 12,
+    "p99_ms": 31,
+    "endpoints": [
+      {"path": "/health", "method": "GET", "rps": 24.1, "error_rate": 0.0},
+      {"path": "/", "method": "GET", "rps": 15.7, "error_rate": 0.0},
+      {"path": "/api/ask", "method": "POST", "note": "error path only", "rps": 11.0, "error_rate": 0.0}
+    ]
+  }
+}
