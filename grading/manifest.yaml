@@ -9,7 +9,7 @@ submission_deadline: "2025-05-10T23:59:00-05:00"
 # ── Environment ───────────────────────────────────────────────────────────────
 python_version: "3.10.12"
 seed: 42
-commit_sha: "FILL_IN_BEFORE_SUBMISSION"   # run: git rev-parse HEAD
+commit_sha: "180eff0aad89cd678ea0477a8b39a07ab1cbf7bb"   # run: git rev-parse HEAD
 
 # ── Model ─────────────────────────────────────────────────────────────────────
 model_id: "claude-sonnet-4-20250514"
