@@ -4,12 +4,12 @@
 
 | Field | Value |
 |-------|-------|
-| Model ID | `claude-sonnet-4-20250514` |
-| Provider | Anthropic |
+| Model ID | `gpt-4o-mini` |
+| Provider | OpenAI |
 | Version | Sonnet 4, snapshot 2025-05-14 |
-| License | Proprietary (Anthropic API Terms of Service) |
+| License | Proprietary (OpenAI API Terms of Service) |
 | Access | Via `ANTHROPIC_API_KEY` environment variable |
-| Parameters | Not disclosed by Anthropic |
+| Parameters | Not disclosed by OpenAI |
 | Input | JSON string (question + memory + page text) |
 | Output | JSON action object |
 | Temperature | 0.0 (deterministic) |
@@ -18,7 +18,7 @@
 ### Why This Model
 
 The rubric paper (Yu et al., 2025) trains a 7B parameter open-source model
-(BrowserAgent-SFT/RFT). For this course project we use `claude-sonnet-4-20250514`
+(BrowserAgent-SFT/RFT). For this course project we use `gpt-4o-mini`
 because:
 
 1. It requires no GPU or local model download — works inside Docker with CPU only.
@@ -39,5 +39,5 @@ See `eval_script/` in the original BrowserAgent repository.
 
 ```bash
 make download-models
-# Output: Model: Anthropic claude-sonnet-4-20250514 via API — no local download required
+# Output: Model: OpenAI gpt-4o-mini via API — no local download required
 ```

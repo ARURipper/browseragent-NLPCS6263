@@ -48,7 +48,7 @@ BrowserAgent.stream(question):
   │     - memory (List[str])                 │
   │     - current_url                        │
   │     - current_page (≤8000 chars)         │
-  │  2. POST to Anthropic /v1/messages       │
+  │  2. POST to OpenAI /v1/messages       │
   │  3. Parse JSON action from response      │
   │  4. Execute action in Playwright browser │
   │  5. Append memory_update to memory       │
@@ -66,7 +66,7 @@ Browser renders steps + final answer in real time
 ```
 
 **External dependencies:**
-- Anthropic Claude API (HTTPS, outbound port 443)
+- OpenAI API (HTTPS, outbound port 443)
 - Wikipedia (HTTPS, outbound port 443, via Playwright)
 
 ---
@@ -192,7 +192,7 @@ class BrowserSession:
 
 | Property | Value |
 |----------|-------|
-| Provider | Anthropic |
+| Provider | OpenAI |
 | Model | `claude-sonnet-4-20250514` |
 | Temperature | 0.0 (deterministic) |
 | Max tokens | 512 |
@@ -233,7 +233,7 @@ On second failure, the step is logged as an error and the loop terminates.
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `ANTHROPIC_API_KEY` | ✅ | — | Anthropic API key |
+| `ANTHROPIC_API_KEY` | ✅ | — | OpenAI API key |
 | `PORT` | | 5000 | Flask listening port |
 | `LOG_LEVEL` | | INFO | Python log level |
 | `MAX_STEPS` | | 8 | Max browsing steps per question |
@@ -244,7 +244,7 @@ On second failure, the step is logged as an error and the loop terminates.
 
 The application is packaged as a multi-stage Docker image.
 `docker compose up` brings the system to healthy in under 10 minutes on a machine
-with internet access. No GPU is required (all inference is via Anthropic API).
+with internet access. No GPU is required (all inference is via OpenAI API).
 
 See `docs/REPRODUCE.md` for exact hardware profile and expected runtime.
 

@@ -15,7 +15,7 @@ maintaining an explicit memory of key conclusions from earlier pages.
 
 | Layer | Technology |
 |-------|-----------|
-| Agent | Python 3.10 + Anthropic Claude API |
+| Agent | Python 3.10 + OpenAI API |
 | Browser | Playwright (headless Chromium) |
 | Web UI | Flask + SSE streaming |
 | Tests | pytest + locust |
@@ -87,7 +87,7 @@ git clone <your-repo-url> browseragent && cd browseragent
 
 # 2. Configure
 cp .env.example .env
-nano .env          # Set ANTHROPIC_API_KEY=sk-ant-...
+nano .env          # Set OPENAI_API_KEY=sk-ant-...
 
 # 3. Build and launch
 docker compose up --build
@@ -117,7 +117,7 @@ playwright install chromium
 playwright install-deps chromium      # may need sudo on bare Linux
 
 # 4. Configure
-cp .env.example .env && nano .env    # set ANTHROPIC_API_KEY
+cp .env.example .env && nano .env    # set OPENAI_API_KEY
 
 # 5. Run
 export $(cat .env | xargs)
@@ -148,7 +148,7 @@ pip install -r requirements.txt
 playwright install chromium          # installs to ~/.cache/ms-playwright
 
 # Export your API key (never hardcode it in scripts)
-export ANTHROPIC_API_KEY="sk-ant-..."
+export OPENAI_API_KEY="sk-ant-..."
 
 # Run the app — it will bind to the node's hostname
 python -m browseragent.app
@@ -174,7 +174,7 @@ module load anaconda3/2023.09
 conda activate browseragent
 
 cd $SCRATCH/browseragent
-export ANTHROPIC_API_KEY="$(cat ~/.secrets/anthropic_key)"
+export OPENAI_API_KEY="$(cat ~/.secrets/anthropic_key)"
 
 make test
 ```
