@@ -10,7 +10,7 @@ services:
     ports:
       - "${PORT:-5000}:5000"
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - LOG_LEVEL=${LOG_LEVEL:-INFO}
       - MAX_STEPS=${MAX_STEPS:-8}
       - PORT=5000
