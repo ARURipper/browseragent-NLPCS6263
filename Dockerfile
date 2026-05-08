@@ -32,7 +32,7 @@ COPY src/ ./src/
 COPY pyproject.toml ./
 
 # Install the package itself
-RUN pip install --no-cache-dir -e .
+RUN pip install --no-cache-dir setuptools && pip install --no-cache-dir -e .
 
 # Switch to non-root
 USER appuser
