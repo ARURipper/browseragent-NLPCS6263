@@ -9,7 +9,6 @@ htmlcov/
 dist/
 build/
 reports/coverage_html/
-reports/regenerated/
 logs/
 *.log
 node_modules/
