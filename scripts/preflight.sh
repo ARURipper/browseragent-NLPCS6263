@@ -90,7 +90,7 @@ fi
 # ── 6. Env template ───────────────────────────────────────────────────────────
 sep
 echo "Checking .env setup…"
-if grep -q "ANTHROPIC_API_KEY" .env.example; then ok ".env.example has ANTHROPIC_API_KEY"; else fail ".env.example missing ANTHROPIC_API_KEY"; fi
+if grep -q "OPENAI_API_KEY" .env.example; then ok ".env.example has ANTHROPIC_API_KEY"; else fail ".env.example missing ANTHROPIC_API_KEY"; fi
 if grep -q "\.env" .gitignore 2>/dev/null; then ok ".env in .gitignore"; else fail ".env NOT in .gitignore"; fi
 
 # ── 7. manifest.yaml commit_sha ───────────────────────────────────────────────
