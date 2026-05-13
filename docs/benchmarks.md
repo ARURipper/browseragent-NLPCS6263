@@ -48,3 +48,8 @@ Tested on the same machine running `docker compose up`:
 | BrowserAgent-SFT (7B) | 0.58 | 0.61 |
 | BrowserAgent-RFT (7B) | **0.63** | **0.67** |
 | **This project (claude-sonnet)** | 0.52 | — |
+
+Notes by Krutin Patel (iro431)
+Benchmarks verified on UTSA ARC HPC compute1 partition
+Wikipedia response times vary between 0.5-2s per page load
+gpt-4o-mini averages 2-3s per API call at temperature 0
