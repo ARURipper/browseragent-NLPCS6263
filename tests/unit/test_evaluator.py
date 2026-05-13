@@ -110,7 +110,7 @@ class TestLogging:
         id2 = new_request_id()
         assert id1 != id2
 
-Additional tests by Krutin Patel (iro431)
+# Additional tests by Krutin Patel (iro431)
 class TestEdgeCaseEvaluator:
     @pytest.mark.unit
     def test_single_word_match(self):
