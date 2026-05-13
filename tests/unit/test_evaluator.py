@@ -109,3 +109,18 @@ class TestLogging:
         id1 = new_request_id()
         id2 = new_request_id()
         assert id1 != id2
+
+Additional tests by Krutin Patel (iro431)
+class TestEdgeCaseEvaluator:
+    @pytest.mark.unit
+    def test_single_word_match(self):
+        assert token_f1("Paris", "Paris") == 1.0
+
+    @pytest.mark.unit
+    def test_numeric_answer(self):
+        assert token_f1("42", "42") == 1.0
+
+    @pytest.mark.unit
+    def test_partial_credit(self):
+        score = token_f1("Paris France", "Paris")
+        assert 0 < score < 1.0
